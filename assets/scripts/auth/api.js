@@ -20,7 +20,21 @@ const signIn = (data) => {
   })
 }
 
+const changePassword = (data) => {
+  console.log('inside change password data is', data)
+  return $.ajax({
+    url: config.apiOrigin + '/change-password/' + store.user.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+    // data: data
+  })
+}
+
 module.exports = {
   signUp,
-  signIn
+  signIn,
+  changePassword
 }
