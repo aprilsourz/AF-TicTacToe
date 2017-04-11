@@ -1,64 +1,70 @@
 'use strict'
-const cellFill = (playerChoice, cellChoice) => {
-  playerChoice === 1 ? $(cellChoice).text('X') : $(cellChoice).text('O')
-}
+const ui = require('./ui.js')
 
 const addHandlers = () => {
+  let player = true
 
   $('#cell-0').click(() => {
-    // function that tells us current player choice and switches between
-
-    const player = 0
+    console.log(player)
     const cellChoice = '#cell-0'
-    cellFill(player, cellChoice)
+    ui.cellFill(player, cellChoice)
+    player = !player
   })
 
   $('#cell-1').click(() => {
-    const player = 0
+    console.log(player)
     const cellChoice = '#cell-1'
-    cellFill(player, cellChoice)
+    ui.cellFill(player, cellChoice)
+    player = !player
   })
 
   $('#cell-2').click(() => {
-    const player = 1
+    console.log(player)
     const cellChoice = '#cell-2'
-    cellFill(player, cellChoice)
+    ui.cellFill(player, cellChoice)
+    player = !player
   })
 
   $('#cell-3').click(() => {
-    const player = 0
+    console.log(player)
     const cellChoice = '#cell-3'
-    cellFill(player, cellChoice)
+    ui.cellFill(player, cellChoice)
+    player = !player
   })
 
   $('#cell-4').click(() => {
-    const player = 0
+    console.log(player)
     const cellChoice = '#cell-4'
-    cellFill(player, cellChoice)
+    ui.cellFill(player, cellChoice)
+    player = !player
   })
 
   $('#cell-5').click(() => {
-    const player = 0
+    console.log(player)
     const cellChoice = '#cell-5'
-    cellFill(player, cellChoice)
+    ui.cellFill(player, cellChoice)
+    player = !player
   })
 
   $('#cell-6').click(() => {
-    const player = 0
+    console.log(player)
     const cellChoice = '#cell-6'
-    cellFill(player, cellChoice)
+    ui.cellFill(player, cellChoice)
+    player = !player
   })
 
   $('#cell-7').click(() => {
-    const player = 0
+    console.log(player)
     const cellChoice = '#cell-7'
-    cellFill(player, cellChoice)
+    ui.cellFill(player, cellChoice)
+    player = !player
   })
 
   $('#cell-8').click(() => {
-    const player = 1
+    console.log(player)
     const cellChoice = '#cell-8'
-    cellFill(player, cellChoice)
+    ui.cellFill(player, cellChoice)
+    player = !player
   })
 }
 
