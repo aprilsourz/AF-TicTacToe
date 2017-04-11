@@ -12,3 +12,10 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
     padding: 15px;
     margin: 0 auto
 }
+.black-border {
+  border: solid 1px black;
+  height: 100px;
+}
+.board-cell{
+  height: 100px;
+}
