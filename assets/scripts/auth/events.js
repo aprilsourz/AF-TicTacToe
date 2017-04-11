@@ -32,6 +32,15 @@ const addHandlers = () => {
   $('#form-signup').on('submit', onSignUp)
   $('#form-signin').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
+  $('#form-signout').on('submit', onSignOut)
+}
+
+const onSignOut = (event) => {
+  event.preventDefault()
+
+  api.signOut()
+    .then(ui.signOutSuccess)
+    .catch(ui.signOutFailure)
 }
 
 module.exports = {
