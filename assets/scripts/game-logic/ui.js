@@ -14,7 +14,7 @@ const cellFill = (currentPlayer, cellChoice) => {
 const cellEvent = (cell) => {
   const cellChoice = cell
   cellFill(player, cellChoice)
-  $('#cell-0').unbind('click')
+  $(cell).unbind('click')
   player = !player
 }
 
