@@ -19,7 +19,6 @@ const cellEvent = (cell) => {
 }
 
 module.exports = {
-  cellFill,
   cellEvent
 
 }
