@@ -1,5 +1,7 @@
 'use strict'
 
+let player = true
+
 // Function to decide if X or O is put in cell
 const cellFill = (currentPlayer, cellChoice) => {
   if (currentPlayer === true) {
@@ -9,7 +11,15 @@ const cellFill = (currentPlayer, cellChoice) => {
   }
 }
 
+const cellEvent = (cell) => {
+  const cellChoice = cell
+  cellFill(player, cellChoice)
+  $('#cell-0').unbind('click')
+  player = !player
+}
+
 module.exports = {
-  cellFill
+  cellFill,
+  cellEvent
 
 }
