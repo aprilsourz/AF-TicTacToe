@@ -1,6 +1,7 @@
 'use strict'
+let player = true
 
-const currentGame = [false, false, false, null, null, null, null, null, null]
+const currentGame = [false, true, true, true, null, null, null, null, null]
 
 const winCombos = [
   [0, 1, 2],
@@ -23,6 +24,8 @@ const checkP1Win = (aWinCombo) => {
   }
   if (doesPlayerWin[0] === true && doesPlayerWin[1] === true && doesPlayerWin[2] === true) {
     console.log('player 1 wins!!')
+  } else {
+    console.log('player 1 does not win')
   }
 }
 
@@ -39,7 +42,17 @@ const checkP2Win = (aWinCombo) => {
   }
 }
 
-let player = true
+const checkWinEvent = () => {
+  if (player === true) {
+    for (let i = 0; i < winCombos.length; i++) {
+      checkP1Win(winCombos[i])
+    }
+  } else if (player === false) {
+    for (let i = 0; i < winCombos.length; i++) {
+      checkP2Win(winCombos[i])
+    }
+  }
+}
 
 const pushMoveArr = (index) => {
   currentGame[index] = player
