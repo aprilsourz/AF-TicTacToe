@@ -20,11 +20,13 @@ const cellEvent = (cell) => {
 }
 
 const displayP1Winner = () => {
-  $('#winner-display').text('Player 1 Wins!')
+  // $('#winner-display').text('Player 1 Wins!')
+  $('.game-board').replaceWith('<h2>Player 1 Wins!</h2>')
 }
 
 const displayP2Winner = () => {
-  $('#winner-display').text('Player 2 Wins!')
+  // $('#winner-display').text('Player 2 Wins!')
+  $('.game-board').replaceWith('<h2>Player 2 Wins!</h2>')
 }
 
 module.exports = {
