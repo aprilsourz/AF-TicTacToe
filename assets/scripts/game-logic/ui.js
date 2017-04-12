@@ -20,15 +20,15 @@ const cellEvent = (cell) => {
 }
 
 const displayP1Winner = () => {
-  // $('#winner-display').text('Player 1 Wins!')
-  $('.game-board').replaceWith('<h2>Player 1 Wins!</h2>')
+  $('.game-board').hide()
   $('#form-reset').show()
+  $('#p1-win').show()
 }
 
 const displayP2Winner = () => {
-  // $('#winner-display').text('Player 2 Wins!')
-  $('.game-board').replaceWith('<h2>Player 2 Wins!</h2>')
+  $('.game-board').hide()
   $('#form-reset').show()
+  $('#p2-win').show()
 }
 
 const hideResetBtn = () => {
