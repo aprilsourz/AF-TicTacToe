@@ -12,7 +12,6 @@ const cellFill = (currentPlayer, cellChoice) => {
 }
 
 const cellEvent = (cell) => {
-  console.log('cell event player is', player)
   const cellChoice = cell
   cellFill(player, cellChoice)
   $(cell).off('click')
@@ -49,7 +48,14 @@ const resetGame = () => {
   $('#cell-6').text('')
   $('#cell-7').text('')
   $('#cell-8').text('')
+  $('#is-draw').hide()
   player = true
+}
+
+const isDraw = () => {
+  $('.game-board').hide()
+  $('#form-reset').show()
+  $('#is-draw').show()
 }
 
 module.exports = {
@@ -57,5 +63,6 @@ module.exports = {
   displayP1Winner,
   displayP2Winner,
   hideResetBtn,
-  resetGame
+  resetGame,
+  isDraw
 }

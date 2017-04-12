@@ -27,8 +27,6 @@ const checkP1Win = (aWinCombo) => {
   }
   if (doesPlayerWin[0] === true && doesPlayerWin[1] === true && doesPlayerWin[2] === true) {
     ui.displayP1Winner()
-  } else {
-    console.log('player 1 does not win')
   }
   return doesPlayerWin[0] === true && doesPlayerWin[1] === true && doesPlayerWin[2] === true
 }
@@ -41,10 +39,19 @@ const checkP2Win = (aWinCombo) => {
   }
   if (doesPlayerWin[0] === true && doesPlayerWin[1] === true && doesPlayerWin[2] === true) {
     ui.displayP2Winner()
-  } else {
-    console.log('player 2 does not win')
   }
   return doesPlayerWin[0] === true && doesPlayerWin[1] === true && doesPlayerWin[2] === true
+}
+
+const checkDraw = () => {
+  let isDrawArr = []
+  isDrawArr = currentGame.filter((element) => {
+    return element !== null
+  })
+  if (isDrawArr.length === 9) {
+    return true
+  }
+  player = !player
 }
 
 const checkWinEvent = () => {
@@ -61,7 +68,10 @@ const checkWinEvent = () => {
       }
     }
   }
-  player = !player
+  if (checkDraw() === true) {
+    ui.isDraw()
+    return
+  }
 }
 
 const pushMoveArr = (index) => {
