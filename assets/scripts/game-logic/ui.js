@@ -12,6 +12,7 @@ const cellFill = (currentPlayer, cellChoice) => {
 }
 
 const cellEvent = (cell) => {
+  console.log('cell event player is', player)
   const cellChoice = cell
   cellFill(player, cellChoice)
   $(cell).unbind('click')

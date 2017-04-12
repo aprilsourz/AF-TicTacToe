@@ -1,5 +1,5 @@
 'use strict'
-let player = false
+let player = true
 
 const currentGame = [null, null, null, null, null, null, null, null, null]
 
@@ -45,6 +45,7 @@ const checkP2Win = (aWinCombo) => {
 }
 
 const checkWinEvent = () => {
+  console.log('check win player is', player)
   if (player === true) {
     for (let i = 0; i < winCombos.length; i++) {
       if (checkP1Win(winCombos[i]) === true) {
@@ -58,14 +59,16 @@ const checkWinEvent = () => {
       }
     }
   }
+  player = !player
 }
 
 const pushMoveArr = (index) => {
   currentGame[index] = player
-  player = !player
-  console.log(currentGame)
+  console.log(currentGame, player)
+  console.log('pushArr player is', player)
 }
 
 module.exports = {
-  pushMoveArr
+  pushMoveArr,
+  checkWinEvent
 }
