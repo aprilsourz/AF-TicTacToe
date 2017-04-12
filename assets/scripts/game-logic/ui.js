@@ -22,16 +22,23 @@ const cellEvent = (cell) => {
 const displayP1Winner = () => {
   // $('#winner-display').text('Player 1 Wins!')
   $('.game-board').replaceWith('<h2>Player 1 Wins!</h2>')
+  $('#form-reset').show()
 }
 
 const displayP2Winner = () => {
   // $('#winner-display').text('Player 2 Wins!')
   $('.game-board').replaceWith('<h2>Player 2 Wins!</h2>')
+  $('#form-reset').show()
+}
+
+const hideResetBtn = () => {
+  $('#form-reset').hide()
 }
 
 module.exports = {
   cellEvent,
   displayP1Winner,
-  displayP2Winner
+  displayP2Winner,
+  hideResetBtn
 
 }

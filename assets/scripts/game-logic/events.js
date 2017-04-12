@@ -58,6 +58,10 @@ const addHandlers = () => {
   })
 }
 
+$('#form-reset').on('reset', () => {
+  console.log('reset button clicked!!')
+})
+
 module.exports = {
   addHandlers
 }

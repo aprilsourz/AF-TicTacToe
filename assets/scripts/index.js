@@ -16,6 +16,7 @@ require('./example')
 // requiring folders for event handlers
 const authEvents = require('./auth/events.js')
 const uiEvents = require('./game-logic/events.js')
+const ui = require('./game-logic/ui.js')
 // on document ready
 $(() => {
   authEvents.addHandlers()
