@@ -19,7 +19,17 @@ const cellEvent = (cell) => {
   player = !player
 }
 
+const displayP1Winner = () => {
+  $('#winner-display').text('Player 1 Wins!')
+}
+
+const displayP2Winner = () => {
+  $('#winner-display').text('Player 2 Wins!')
+}
+
 module.exports = {
-  cellEvent
+  cellEvent,
+  displayP1Winner,
+  displayP2Winner
 
 }

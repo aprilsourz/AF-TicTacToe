@@ -1,4 +1,7 @@
 'use strict'
+
+const ui = require('./ui.js')
+
 let player = true
 
 const currentGame = [null, null, null, null, null, null, null, null, null]
@@ -23,7 +26,7 @@ const checkP1Win = (aWinCombo) => {
     doesPlayerWin.push(acc)
   }
   if (doesPlayerWin[0] === true && doesPlayerWin[1] === true && doesPlayerWin[2] === true) {
-    console.log('player 1 wins!!')
+    ui.displayP1Winner()
   } else {
     console.log('player 1 does not win')
   }
@@ -37,7 +40,7 @@ const checkP2Win = (aWinCombo) => {
     doesPlayerWin.push(acc)
   }
   if (doesPlayerWin[0] === true && doesPlayerWin[1] === true && doesPlayerWin[2] === true) {
-    console.log('player 2 wins!!')
+    ui.displayP2Winner()
   } else {
     console.log('player 2 does not win')
   }
@@ -45,7 +48,6 @@ const checkP2Win = (aWinCombo) => {
 }
 
 const checkWinEvent = () => {
-  console.log('check win player is', player)
   if (player === true) {
     for (let i = 0; i < winCombos.length; i++) {
       if (checkP1Win(winCombos[i]) === true) {
