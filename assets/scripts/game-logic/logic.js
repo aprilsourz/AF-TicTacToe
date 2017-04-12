@@ -72,7 +72,7 @@ const pushMoveArr = (index) => {
 
 const resetGame = () => {
   currentGame = [null, null, null, null, null, null, null, null, null]
-  console.log(currentGame)
+  player = true
 }
 
 module.exports = {

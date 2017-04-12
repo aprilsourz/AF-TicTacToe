@@ -49,6 +49,7 @@ const resetGame = () => {
   $('#cell-6').text('')
   $('#cell-7').text('')
   $('#cell-8').text('')
+  player = true
 }
 
 module.exports = {
