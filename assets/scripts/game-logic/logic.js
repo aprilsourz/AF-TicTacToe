@@ -4,7 +4,7 @@ const ui = require('./ui.js')
 
 let player = true
 
-const currentGame = [null, null, null, null, null, null, null, null, null]
+let currentGame = [null, null, null, null, null, null, null, null, null]
 
 const winCombos = [
   [0, 1, 2],
@@ -70,7 +70,13 @@ const pushMoveArr = (index) => {
   console.log('pushArr player is', player)
 }
 
+const resetGame = () => {
+  currentGame = [null, null, null, null, null, null, null, null, null]
+  console.log(currentGame)
+}
+
 module.exports = {
   pushMoveArr,
-  checkWinEvent
+  checkWinEvent,
+  resetGame
 }

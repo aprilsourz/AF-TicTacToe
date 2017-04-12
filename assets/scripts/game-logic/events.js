@@ -59,7 +59,9 @@ const addHandlers = () => {
 }
 
 $('#form-reset').on('reset', () => {
-  console.log('reset button clicked!!')
+  ui.resetGame()
+  addHandlers()
+  logic.resetGame()
 })
 
 module.exports = {
