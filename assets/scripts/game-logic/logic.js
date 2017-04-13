@@ -27,6 +27,8 @@ const checkP1Win = (aWinCombo) => {
   }
   if (doesPlayerWin[0] === true && doesPlayerWin[1] === true && doesPlayerWin[2] === true) {
     ui.displayP1Winner()
+  } else {
+    console.log('player 1 does not win')
   }
   return doesPlayerWin[0] === true && doesPlayerWin[1] === true && doesPlayerWin[2] === true
 }
@@ -43,32 +45,18 @@ const checkP2Win = (aWinCombo) => {
   return doesPlayerWin[0] === true && doesPlayerWin[1] === true && doesPlayerWin[2] === true
 }
 
-const checkDraw = () => {
-  let isDrawArr = []
-  isDrawArr = currentGame.filter((element) => {
-    return element !== null
-  })
-  if (isDrawArr.length === 9) {
-    return true
-  }
+const checkDraw = (game) => {
   player = !player
+  return !game.includes(null)
 }
 
 const checkWinEvent = () => {
   if (player === true) {
-    for (let i = 0; i < winCombos.length; i++) {
-      if (checkP1Win(winCombos[i]) === true) {
-        break
-      }
-    }
+    winCombos.some((combo) => checkP1Win(combo) === true)
   } else if (player === false) {
-    for (let i = 0; i < winCombos.length; i++) {
-      if (checkP2Win(winCombos[i]) === true) {
-        break
-      }
-    }
+    winCombos.some((combo) => checkP2Win(combo) === true)
   }
-  if (checkDraw() === true) {
+  if (checkDraw(currentGame) === true) {
     ui.isDraw()
     return
   }
@@ -80,7 +68,7 @@ const pushMoveArr = (index) => {
   console.log('pushArr player is', player)
 }
 
-const resetGame = () => {
+const resetGameLogic = () => {
   currentGame = [null, null, null, null, null, null, null, null, null]
   player = true
 }
@@ -88,5 +76,5 @@ const resetGame = () => {
 module.exports = {
   pushMoveArr,
   checkWinEvent,
-  resetGame
+  resetGameLogic
 }

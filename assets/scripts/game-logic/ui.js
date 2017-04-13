@@ -6,16 +6,16 @@ let player = true
 const cellFill = (currentPlayer, cellChoice) => {
   if (currentPlayer === true) {
     $(cellChoice).text('X')
+    player = false
   } else if (currentPlayer === false) {
     $(cellChoice).text('O')
+    player = true
   }
 }
 
 const cellEvent = (cell) => {
-  const cellChoice = cell
-  cellFill(player, cellChoice)
+  cellFill(player, cell)
   $(cell).off('click')
-  player = !player
 }
 
 const displayP1Winner = () => {
