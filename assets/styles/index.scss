@@ -7,10 +7,23 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
     margin: 0 auto
 }
 
-#signout-button {
+#form-signout{
   max-width: 200px;
     padding: 15px;
-    margin: 0 auto
+    margin: 0 auto;
+    display: none;
+}
+#form-signup{
+  display: none;
+}
+#change-password{
+  display: none;
+}
+#get-games{
+  display: none;
+}
+#get-one-game{
+  display:none;
 }
 #start-game {
   max-width: 200px;

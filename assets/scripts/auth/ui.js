@@ -4,6 +4,8 @@ const store = require('../store.js')
 
 const signUpSuccess = (data) => {
   console.log('sign up success', data)
+  $('#form-signup').hide()
+  $('#form-signin').show()
 }
 
 const signUpFailure = (error) => {
@@ -12,6 +14,9 @@ const signUpFailure = (error) => {
 
 const signInSuccess = (data) => {
   $('#start-game').show()
+  $('#no-account').hide()
+  $('#form-signin').hide()
+  $('#form-signout').show()
   console.log('sign in success', data)
   store.user = data.user
 }

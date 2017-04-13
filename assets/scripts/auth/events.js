@@ -28,11 +28,19 @@ const onChangePassword = function (event) {
     .catch(ui.changePasswordFailure)
 }
 
+const onNoAccount = (event) => {
+  event.preventDefault()
+  $('#form-signin').hide()
+  $('#no-account').hide()
+  $('#form-signup').show()
+}
+
 const addHandlers = () => {
   $('#form-signup').on('submit', onSignUp)
   $('#form-signin').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
   $('#form-signout').on('submit', onSignOut)
+  $('#no-account').on('submit', onNoAccount)
 }
 
 const onSignOut = (event) => {
