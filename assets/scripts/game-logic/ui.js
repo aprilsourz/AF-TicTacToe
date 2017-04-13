@@ -1,13 +1,15 @@
 'use strict'
 
+const { cells } = require('./constants')
+
 let player = true
 
 // Function to decide if X or O is put in cell
 const cellFill = (currentPlayer, cellChoice) => {
-  if (currentPlayer === true) {
+  if (currentPlayer) {
     $(cellChoice).text('X')
     player = false
-  } else if (currentPlayer === false) {
+  } else {
     $(cellChoice).text('O')
     player = true
   }
@@ -39,15 +41,10 @@ const resetGame = () => {
   $('#form-reset').hide()
   $('#p2-win').hide()
   $('#p1-win').hide()
-  $('#cell-0').text('')
-  $('#cell-1').text('')
-  $('#cell-2').text('')
-  $('#cell-3').text('')
-  $('#cell-4').text('')
-  $('#cell-5').text('')
-  $('#cell-6').text('')
-  $('#cell-7').text('')
-  $('#cell-8').text('')
+  cells.forEach(cellId => {
+    $(cellId).text('')
+    $(cellId).off('click')
+  })
   $('#is-draw').hide()
   player = true
 }

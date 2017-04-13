@@ -32,7 +32,6 @@ const checkDraw = (game) => {
 }
 
 const checkWinEvent = (player) => {
-  console.log(currentGame)
   const isX = player === 'X'
   winCombos.some((combo) => checkPlayerWin(combo, isX) === true)
   if (checkDraw(currentGame) === true) {
@@ -42,7 +41,6 @@ const checkWinEvent = (player) => {
 }
 
 const pushMoveArr = (index) => {
-  console.log(player)
   currentGame[index] = player
 }
 
