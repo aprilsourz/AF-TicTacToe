@@ -11,6 +11,7 @@ const signUpFailure = (error) => {
 }
 
 const signInSuccess = (data) => {
+  $('#start-game').show()
   console.log('sign in success', data)
   store.user = data.user
 }

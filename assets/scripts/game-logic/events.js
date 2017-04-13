@@ -28,6 +28,7 @@ $('#form-reset').on('reset', () => {
   ui.resetGame()
   addHandlers()
   logic.resetGameLogic()
+  onStartGame(event)
 })
 
 // api create game event
@@ -36,6 +37,8 @@ const onStartGame = (event) => {
   api.createGame()
   .then(apiUi.createGameSuccess)
   .catch(apiUi.createGameFailure)
+  $('#start-game').hide()
+  $('.hide-board').show()
 }
 
 const onGetGames = (event) => {

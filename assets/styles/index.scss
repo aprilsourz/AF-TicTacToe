@@ -15,7 +15,8 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 #start-game {
   max-width: 200px;
     padding: 15px;
-    margin: 0 auto
+    margin: 0 auto;
+    display: none;
 }
 .black-border {
   border: solid 1px black;
@@ -46,9 +47,9 @@ h2{
     padding: 15px;
     margin: 0 auto
 }
-// .get-games-margin{
-//   margin-top: 500px;
-// }
 .padding {
   height: 300px;
+}
+.hide-board{
+  display: none;
 }
