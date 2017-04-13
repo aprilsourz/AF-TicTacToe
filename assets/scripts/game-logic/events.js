@@ -7,6 +7,8 @@ const { cells } = require('./constants')
 const api = require('./api.js')
 const apiUi = require('./apiUi.js')
 
+const getFormFields = require(`../../../lib/get-form-fields`)
+
 // generates click event for each cell in gameboard
 const addHandlers = () => {
   cells.forEach((cellId, ix) => {
@@ -36,7 +38,23 @@ const onStartGame = (event) => {
   .catch(apiUi.createGameFailure)
 }
 
+const onGetGames = (event) => {
+  event.preventDefault()
+  api.getGames()
+  .then(apiUi.getGamesSuccess)
+  .catch(apiUi.getGamesFailure)
+}
+const onGetOneGame = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  api.getOneGame(data)
+    .then(apiUi.oneGameSuccess)
+    .catch(apiUi.oneGameFailure)
+}
+
 $('#start-game').on('submit', onStartGame)
+$('#get-games').on('submit', onGetGames)
+$('#get-one-game').on('submit', onGetOneGame)
 
 module.exports = {
   addHandlers

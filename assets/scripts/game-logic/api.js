@@ -32,7 +32,28 @@ const updateGame = (inCell, ix, over) => {
     }
   })
 }
+
+const getGames = () => {
+  return $.ajax({
+    url: config.apiOrigin + '/games',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token }
+  })
+}
+
+const getOneGame = (data) => {
+  return $.ajax({
+    url: config.apiOrigin + '/games/' + data.game.id,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token }
+  })
+}
+
 module.exports = {
   createGame,
-  updateGame
+  updateGame,
+  getGames,
+  getOneGame
 }

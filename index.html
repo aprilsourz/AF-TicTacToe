@@ -51,7 +51,7 @@
 
       <form id="start-game">
         <fieldset>
-          <button id="start-game" class="btn btn-lg btn-primary btn-block" type="submit">Start Game!</button>
+          <button id="start-game-button" class="btn btn-lg btn-primary btn-block" type="submit">Start Game!</button>
         </fieldset>
       </form>
 
@@ -78,6 +78,25 @@
             <div id="cell-8" class="col-md-4 col-xs-4 black-border board-cell"></div>
           </div>
 
+          <div class="row">
+            <div class="col-md-12 col-xs-12">
+              <form id="get-games">
+                <fieldset>
+                  <button id="get-games-button" class="btn btn-lg btn-primary btn-block" type="submit">View your games</button>
+                </fieldset>
+              </form>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12 col-xs-12">
+            <form id="get-one-game" class="clear-input get-one-game">
+              <input type="submit" name="submit" value="Get One Game">
+              <input type="text" name="game[id]" placeholder="game id">
+            </form>
+          </div>
+        </div>
+
         </div>
         <!-- /game-board -->
 
@@ -94,10 +113,6 @@
 
       </div>
       <!-- /big row -->
-
-
-
-
 
 
 

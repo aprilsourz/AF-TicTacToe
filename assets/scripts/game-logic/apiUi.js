@@ -20,9 +20,27 @@ const updateGameFailure = () => {
   console.log('error')
 }
 
+const getGamesSuccess = (data) => {
+  console.log('here are all the games', data)
+}
+
+const getGamesFailure = () => {
+  console.log('error')
+}
+
+const oneGameSuccess = (data) => {
+  console.log('one game', data)
+}
+const oneGameFailure = (data) => {
+  console.log('error')
+}
 module.exports = {
   createGameSuccess,
   createGameFailure,
   updateGameSuccess,
-  updateGameFailure
+  updateGameFailure,
+  getGamesSuccess,
+  getGamesFailure,
+  oneGameSuccess,
+  oneGameFailure
 }
