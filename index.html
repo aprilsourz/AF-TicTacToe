@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Example</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags unless you know what you are doing -->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>Example</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags unless you know what you are doing -->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
+  <!-- Do not add `link` tags unless you know what you are doing -->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-    <body class="container-fluid">
+  <!-- Do not add `script` tags unless you know what you are doing -->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
 
       <form id="form-signup" class="form-signin">
         <h1>Tic Tac Toe</h1>
@@ -54,67 +57,68 @@
           <button id="start-game-button" class="btn btn-lg btn-primary btn-block" type="submit">Start Game!</button>
         </fieldset>
       </form>
+    </div>
+  </div>
 
-      <div class="row">
-        <div class="col-md-3 col-xs-3 padding"></div>
+  <div class="row">
+    <div class="col-md-3 col-xs-3 padding"></div>
 
-        <div class="col-md-6 col-xs-6 black-border game-board">
+    <div class="col-md-6 col-xs-6 black-border game-board">
 
-          <div class="row black-border">
-            <div id="cell-0" class="col-md-4 col-xs-4 black-border board-cell"></div>
-            <div id="cell-1" class="col-md-4 col-xs-4 black-border board-cell"></div>
-            <div id="cell-2" class="col-md-4 col-xs-4 black-border board-cell"></div>
-          </div>
-
-          <div class="row black-border">
-            <div id="cell-3" class="col-md-4 col-xs-4 black-border board-cell"></div>
-            <div id="cell-4" class="col-md-4 col-xs-4 black-border board-cell"></div>
-            <div id="cell-5" class="col-md-4 col-xs-4 black-border board-cell"></div>
-          </div>
-
-          <div class="row black-border">
-            <div id="cell-6" class="col-md-4 col-xs-4 black-border board-cell"></div>
-            <div id="cell-7" class="col-md-4 col-xs-4 black-border board-cell"></div>
-            <div id="cell-8" class="col-md-4 col-xs-4 black-border board-cell"></div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-12 col-xs-12">
-              <form id="get-games">
-                <fieldset>
-                  <button id="get-games-button" class="btn btn-lg btn-primary btn-block" type="submit">View your games</button>
-                </fieldset>
-              </form>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-12 col-xs-12">
-            <form id="get-one-game" class="clear-input get-one-game">
-              <input type="submit" name="submit" value="Get One Game">
-              <input type="text" name="game[id]" placeholder="game id">
-            </form>
-          </div>
-        </div>
-
-        </div>
-        <!-- /game-board -->
-
-
-          <div class="col-md-3 col-xs-3">
-            <form id="form-reset">
-              <input class="btn btn-primary" type="reset" value="Play again?">
-            </form>
-
-            <h1 id="p1-win">Player 1 Wins!</h1>
-            <h1 id="p2-win">Player 2 Wins!</h1>
-            <h1 id="is-draw">Its a Draw!</h1>
-          </div>
-
+      <div class="row black-border">
+        <div id="cell-0" class="col-md-4 col-xs-4 black-border board-cell"></div>
+        <div id="cell-1" class="col-md-4 col-xs-4 black-border board-cell"></div>
+        <div id="cell-2" class="col-md-4 col-xs-4 black-border board-cell"></div>
       </div>
-      <!-- /big row -->
+
+      <div class="row black-border">
+        <div id="cell-3" class="col-md-4 col-xs-4 black-border board-cell"></div>
+        <div id="cell-4" class="col-md-4 col-xs-4 black-border board-cell"></div>
+        <div id="cell-5" class="col-md-4 col-xs-4 black-border board-cell"></div>
+      </div>
+
+      <div class="row black-border">
+        <div id="cell-6" class="col-md-4 col-xs-4 black-border board-cell"></div>
+        <div id="cell-7" class="col-md-4 col-xs-4 black-border board-cell"></div>
+        <div id="cell-8" class="col-md-4 col-xs-4 black-border board-cell"></div>
+      </div>
+
+    </div>
+    <!-- /game-board -->
 
 
+    <div class="col-md-3 col-xs-3 padding">
+      <form id="form-reset">
+        <input class="btn btn-primary" type="reset" value="Play again?">
+      </form>
 
-    </body>
+      <h1 id="p1-win">Player 1 Wins!</h1>
+      <h1 id="p2-win">Player 2 Wins!</h1>
+      <h1 id="is-draw">Its a Draw!</h1>
+    </div>
+
+  </div>
+  <!-- /big row -->
+  <div class="row get-games-margin">
+    <div class="col-md-12 col-xs-12">
+      <form id="get-games">
+        <fieldset>
+          <button id="get-games-button" class="btn btn-lg btn-primary btn-block" type="submit">View your games</button>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12 col-xs-12">
+      <form id="get-one-game" class="clear-input get-one-game">
+        <input type="submit" name="submit" value="Get One Game">
+        <input type="text" name="game[id]" placeholder="game id">
+      </form>
+    </div>
+  </div>
+
+
+</body>
+
 </html>
