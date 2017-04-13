@@ -14,6 +14,9 @@ const addHandlers = () => {
       ui.cellEvent(event.target)
       logic.pushMoveArr(ix)
       logic.checkWinEvent(event.target.innerHTML)
+      api.updateGame(event.target.innerHTML, ix)
+        .then(apiUi.updateGameSuccess)
+        .catch(apiUi.updateGameFailure)
     })
   })
 }
@@ -32,7 +35,6 @@ const onStartGame = (event) => {
   .then(apiUi.createGameSuccess)
   .catch(apiUi.createGameFailure)
 }
-
 
 $('#start-game').on('submit', onStartGame)
 

@@ -13,6 +13,26 @@ const createGame = () => {
     data: {}
   })
 }
+
+const updateGame = (inCell, ix) => {
+  return $.ajax({
+    url: config.apiOrigin + '/games/' + store.game,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: {
+      'game': {
+        'cell': {
+          'index': ix,
+          'value': inCell
+        },
+        'over': false
+      }
+    }
+  })
+}
 module.exports = {
-  createGame
+  createGame,
+  updateGame
 }
