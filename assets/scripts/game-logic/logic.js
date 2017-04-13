@@ -27,8 +27,6 @@ const checkP1Win = (aWinCombo) => {
   }
   if (doesPlayerWin[0] === true && doesPlayerWin[1] === true && doesPlayerWin[2] === true) {
     ui.displayP1Winner()
-  } else {
-    console.log('player 1 does not win')
   }
   return doesPlayerWin[0] === true && doesPlayerWin[1] === true && doesPlayerWin[2] === true
 }
@@ -64,13 +62,13 @@ const checkWinEvent = () => {
 
 const pushMoveArr = (index) => {
   currentGame[index] = player
-  console.log(currentGame, player)
-  console.log('pushArr player is', player)
 }
 
 const resetGameLogic = () => {
   currentGame = [null, null, null, null, null, null, null, null, null]
   player = true
+  doesPlayerWin = []
+  console.log(doesPlayerWin)
 }
 
 module.exports = {

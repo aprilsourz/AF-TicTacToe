@@ -61,7 +61,7 @@ const addHandlers = () => {
 $('#form-reset').on('reset', () => {
   ui.resetGame()
   addHandlers()
-  logic.resetGame()
+  logic.resetGameLogic()
 })
 
 module.exports = {
