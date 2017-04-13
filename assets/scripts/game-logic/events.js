@@ -2,59 +2,25 @@
 const ui = require('./ui.js')
 const logic = require('./logic.js')
 
+const cells = [
+  '#cell-0',
+  '#cell-1',
+  '#cell-2',
+  '#cell-3',
+  '#cell-4',
+  '#cell-5',
+  '#cell-6',
+  '#cell-7',
+  '#cell-8'
+]
+
 const addHandlers = () => {
-  $('#cell-0').click(() => {
-    ui.cellEvent(event.target)
-    logic.pushMoveArr(0)
-    logic.checkWinEvent()
-  })
-
-  $('#cell-1').click(() => {
-    ui.cellEvent(event.target)
-    logic.pushMoveArr(1)
-    logic.checkWinEvent()
-  })
-
-  $('#cell-2').click(() => {
-    ui.cellEvent(event.target)
-    logic.pushMoveArr(2)
-    logic.checkWinEvent()
-  })
-
-  $('#cell-3').click(() => {
-    ui.cellEvent(event.target)
-    logic.pushMoveArr(3)
-    logic.checkWinEvent()
-  })
-
-  $('#cell-4').click(() => {
-    ui.cellEvent(event.target)
-    logic.pushMoveArr(4)
-    logic.checkWinEvent()
-  })
-
-  $('#cell-5').click(() => {
-    ui.cellEvent(event.target)
-    logic.pushMoveArr(5)
-    logic.checkWinEvent()
-  })
-
-  $('#cell-6').click(() => {
-    ui.cellEvent(event.target)
-    logic.pushMoveArr(6)
-    logic.checkWinEvent()
-  })
-
-  $('#cell-7').click(() => {
-    ui.cellEvent(event.target)
-    logic.pushMoveArr(7)
-    logic.checkWinEvent()
-  })
-
-  $('#cell-8').click(() => {
-    ui.cellEvent(event.target)
-    logic.pushMoveArr(8)
-    logic.checkWinEvent()
+  cells.forEach((cellId, ix) => {
+    $(cellId).click(() => {
+      ui.cellEvent(event.target)
+      logic.pushMoveArr(ix)
+      logic.checkWinEvent(event.target.innerHTML)
+    })
   })
 }
 

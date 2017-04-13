@@ -17,30 +17,13 @@ const winCombos = [
   [2, 4, 6]
 ]
 
-let doesPlayerWin = []
-
-const checkP1Win = (aWinCombo) => {
-  doesPlayerWin = []
-  for (let i = 0; i < 3; i++) {
-    const acc = currentGame[aWinCombo[i]] === true
-    doesPlayerWin.push(acc)
+const checkPlayerWin = (aWinCombo, player) => {
+  const result = aWinCombo.map(number => currentGame[number])
+  const maybeWinningCombo = result.every(x => x === player)
+  if (maybeWinningCombo) {
+    player ? ui.displayP1Winner() : ui.displayP2Winner()
   }
-  if (doesPlayerWin[0] === true && doesPlayerWin[1] === true && doesPlayerWin[2] === true) {
-    ui.displayP1Winner()
-  }
-  return doesPlayerWin[0] === true && doesPlayerWin[1] === true && doesPlayerWin[2] === true
-}
-
-const checkP2Win = (aWinCombo) => {
-  doesPlayerWin = []
-  for (let i = 0; i < 3; i++) {
-    const acc = currentGame[aWinCombo[i]] === false
-    doesPlayerWin.push(acc)
-  }
-  if (doesPlayerWin[0] === true && doesPlayerWin[1] === true && doesPlayerWin[2] === true) {
-    ui.displayP2Winner()
-  }
-  return doesPlayerWin[0] === true && doesPlayerWin[1] === true && doesPlayerWin[2] === true
+  return maybeWinningCombo
 }
 
 const checkDraw = (game) => {
@@ -48,12 +31,10 @@ const checkDraw = (game) => {
   return !game.includes(null)
 }
 
-const checkWinEvent = () => {
-  if (player === true) {
-    winCombos.some((combo) => checkP1Win(combo) === true)
-  } else if (player === false) {
-    winCombos.some((combo) => checkP2Win(combo) === true)
-  }
+const checkWinEvent = (player) => {
+  console.log(currentGame)
+  const isX = player === 'X'
+  winCombos.some((combo) => checkPlayerWin(combo, isX) === true)
   if (checkDraw(currentGame) === true) {
     ui.isDraw()
     return
@@ -61,14 +42,13 @@ const checkWinEvent = () => {
 }
 
 const pushMoveArr = (index) => {
+  console.log(player)
   currentGame[index] = player
 }
 
 const resetGameLogic = () => {
   currentGame = [null, null, null, null, null, null, null, null, null]
   player = true
-  doesPlayerWin = []
-  console.log(doesPlayerWin)
 }
 
 module.exports = {
