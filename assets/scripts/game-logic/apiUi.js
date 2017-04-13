@@ -13,7 +13,7 @@ const createGameFailure = () => {
 }
 
 const updateGameSuccess = (data) => {
-  console.log(data.game.cells)
+  console.log(data.game.over, data.game.cells)
 }
 
 const updateGameFailure = () => {

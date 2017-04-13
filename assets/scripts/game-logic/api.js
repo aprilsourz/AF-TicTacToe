@@ -14,7 +14,7 @@ const createGame = () => {
   })
 }
 
-const updateGame = (inCell, ix) => {
+const updateGame = (inCell, ix, over) => {
   return $.ajax({
     url: config.apiOrigin + '/games/' + store.game,
     method: 'PATCH',
@@ -27,7 +27,7 @@ const updateGame = (inCell, ix) => {
           'index': ix,
           'value': inCell
         },
-        'over': false
+        'over': over
       }
     }
   })

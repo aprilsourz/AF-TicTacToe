@@ -13,8 +13,8 @@ const addHandlers = () => {
     $(cellId).click(() => {
       ui.cellEvent(event.target)
       logic.pushMoveArr(ix)
-      logic.checkWinEvent(event.target.innerHTML)
-      api.updateGame(event.target.innerHTML, ix)
+      const over = logic.checkWinEvent(event.target.innerHTML)
+      api.updateGame(event.target.innerHTML, ix, over)
         .then(apiUi.updateGameSuccess)
         .catch(apiUi.updateGameFailure)
     })
