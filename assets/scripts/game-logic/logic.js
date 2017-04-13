@@ -33,8 +33,8 @@ const checkDraw = (game) => {
 
 const checkWinEvent = (player) => {
   const isX = player === 'X'
-  winCombos.some((combo) => checkPlayerWin(combo, isX) === true)
-  if (checkDraw(currentGame) === true) {
+  const playerWon = winCombos.some((combo) => checkPlayerWin(combo, isX))
+  if (!playerWon && checkDraw(currentGame)) {
     ui.isDraw()
     return
   }
