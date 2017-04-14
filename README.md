@@ -21,7 +21,7 @@
 
 ## Planning Process
 
-I started this project by writing user stories and making wire frames. I
+I started this project by writing user stories and making wire frames.
 I created most of my html elements first and placed them in temporary places
 with my minimal styling.
 
