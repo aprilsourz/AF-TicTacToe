@@ -4,8 +4,10 @@ const store = require('../store.js')
 
 const signUpSuccess = (data) => {
   console.log('sign up success', data)
+  $('#back-to-signin').hide()
   $('#form-signup').hide()
   $('#form-signin').show()
+  $('#no-account').show()
 }
 
 const signUpFailure = (error) => {

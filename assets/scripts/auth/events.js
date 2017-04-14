@@ -33,6 +33,15 @@ const onNoAccount = (event) => {
   $('#form-signin').hide()
   $('#no-account').hide()
   $('#form-signup').show()
+  $('#back-to-signin').show()
+}
+
+const onBackToSignIn = (event) => {
+  event.preventDefault()
+  $('#form-signup').hide()
+  $('#back-to-signin').hide()
+  $('#no-account').show()
+  $('#form-signin').show()
 }
 
 const addHandlers = () => {
@@ -41,6 +50,7 @@ const addHandlers = () => {
   $('#change-password').on('submit', onChangePassword)
   $('#form-signout').on('submit', onSignOut)
   $('#no-account').on('submit', onNoAccount)
+  $('#back-to-signin').on('submit', onBackToSignIn)
 }
 
 const onSignOut = (event) => {
@@ -48,7 +58,6 @@ const onSignOut = (event) => {
   api.signOut()
     .then(ui.signOutSuccess)
     .catch(ui.signOutFailure)
-
 }
 
 module.exports = {

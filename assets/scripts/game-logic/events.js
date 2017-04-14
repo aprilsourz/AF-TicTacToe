@@ -39,6 +39,7 @@ const onStartGame = (event) => {
   .catch(apiUi.createGameFailure)
   $('#start-game').hide()
   $('.hide-board').show()
+  $('#back-to-signin').hide()
 }
 
 const onGetGames = (event) => {
