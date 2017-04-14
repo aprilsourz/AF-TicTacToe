@@ -40,6 +40,9 @@ const onStartGame = (event) => {
   $('#start-game').hide()
   $('.hide-board').show()
   $('#back-to-signin').hide()
+  $('#display-stats').show()
+  $('#get-games').show()
+  $('#get-one-game').show()
 }
 
 const onGetGames = (event) => {
