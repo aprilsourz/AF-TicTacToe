@@ -3,15 +3,14 @@
 const store = require('../store.js')
 
 const signUpSuccess = (data) => {
-  console.log('sign up success', data)
   $('#back-to-signin').hide()
   $('#form-signup').hide()
   $('#form-signin').show()
   $('#no-account').show()
 }
 
-const signUpFailure = (error) => {
-  console.error(error)
+const signUpFailure = () => {
+  $('.signup-fail').text('Oops something went wrong')
 }
 
 const signInSuccess = (data) => {
@@ -19,24 +18,24 @@ const signInSuccess = (data) => {
   $('#form-signin').hide()
   $('#no-account').hide()
   $('#form-signout').show()
-  console.log('sign in success', data)
+  $('#change-password').show()
+
   store.user = data.user
 }
 
-const signInFailure = (error) => {
-  console.error(error)
+const signInFailure = () => {
+  $('.signin-fail').text('Problem signing in!')
 }
 
 const changePasswordSuccess = (data) => {
-  console.log('changed password!', data)
+  $('.password-fail').text('You changed your password!')
 }
 
-const changePasswordFailure = (error) => {
-  console.error('failed to change password', error)
+const changePasswordFailure = () => {
+  $('.password-fail').text('Problem changing password!')
 }
 
 const signOutSuccess = (data) => {
-  console.log('you are signed out!')
   $('.hide-board').hide()
   $('#form-signout').hide()
   $('#no-account').show()
@@ -49,11 +48,12 @@ const signOutSuccess = (data) => {
   $('#get-games').hide()
   $('#get-one-game').hide()
   $('#start-game').hide()
+  $('#change-password').hide()
   store.user = null
 }
 
-const signOutFailure = (error) => {
-  console.error('error on sign out ', error)
+const signOutFailure = () => {
+  $('.signout-fail').text('You cant sign out right now!')
 }
 
 module.exports = {

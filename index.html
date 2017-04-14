@@ -24,6 +24,7 @@
         <label for="inputPassword" class="sr-only">Password</label>
         <input name="credentials[password]" type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+        <p class="signin-fail"></p>
       </form>
 
       <form id="form-signin" class="form-signin">
@@ -33,6 +34,7 @@
         <label for="inputPassword" class="sr-only">Password</label>
         <input name="credentials[password]" type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign In</button>
+        <p class="signin-fail"></p>
       </form>
 
       <form id="no-account"  class="form-signin">
@@ -48,12 +50,14 @@
         <label for="inputPassword" class="sr-only">Password</label>
         <input name="passwords[new]" type="password" id="inputPassword" class="form-control" placeholder="New Password" required="">
         <button class="btn btn-lg btn-primary btn-block" type="submit">Change Password</button>
+        <p class="password-fail"></p>
       </form>
 
       <form id="form-signout">
         <fieldset>
           <button id="signout-button" class="btn btn-lg btn-primary btn-block" type="submit">Sign Out</button>
         </fieldset>
+        <p class="signout-fail"></p>
       </form>
 
       <form id="start-game">
