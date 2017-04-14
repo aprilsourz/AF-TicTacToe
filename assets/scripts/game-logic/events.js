@@ -29,11 +29,16 @@ $('#form-reset').on('reset', () => {
   addHandlers()
   logic.resetGameLogic()
   onStartGame(event)
+  cells.forEach(cellId => {
+    $(cellId).text('')
+    $(cellId).off('click')
+  })
 })
 
 // api create game event
 const onStartGame = (event) => {
   event.preventDefault()
+  addHandlers()
   api.createGame()
   .then(apiUi.createGameSuccess)
   .catch(apiUi.createGameFailure)

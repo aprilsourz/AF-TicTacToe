@@ -1,7 +1,7 @@
 'use strict'
 
 const store = require('../store.js')
-
+const { cells } = require('../game-logic/constants')
 const signUpSuccess = (data) => {
   $('#back-to-signin').hide()
   $('#form-signup').hide()
@@ -50,6 +50,10 @@ const signOutSuccess = (data) => {
   $('#start-game').hide()
   $('#change-password').hide()
   $('.game-list').html('')
+  cells.forEach(cellId => {
+    $(cellId).text('')
+    $(cellId).off('click')
+  })
   store.user = null
 }
 

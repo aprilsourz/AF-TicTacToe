@@ -20,5 +20,4 @@ const ui = require('./game-logic/ui.js')
 // on document ready
 $(() => {
   authEvents.addHandlers()
-  uiEvents.addHandlers()
 })
