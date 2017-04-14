@@ -10,7 +10,7 @@ const createGameFailure = () => {
 
 }
 
-const updateGameSuccess = () => {
+const updateGameSuccess = (data) => {
 
 }
 
@@ -36,7 +36,7 @@ const getGamesSuccess = (data) => {
 }
 
 const getGamesFailure = () => {
-  $('#display-stats').text('Problem getting games!')
+  // $('#display-stats').text('Problem getting games!')
 }
 
 const oneGameSuccess = (data) => {
@@ -47,7 +47,7 @@ const oneGameSuccess = (data) => {
   }
 }
 const oneGameFailure = (data) => {
-  $('#display-stats').text('Please enter a valid ID!')
+  // $('#display-stats').text('Please enter a valid ID!')
 }
 module.exports = {
   createGameSuccess,

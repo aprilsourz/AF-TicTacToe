@@ -1,7 +1,10 @@
 'use strict'
 
+const logic = require('../game-logic/logic.js')
 const store = require('../store.js')
 const { cells } = require('../game-logic/constants')
+const gameUi = require('../game-logic/ui.js')
+
 const signUpSuccess = (data) => {
   $('#back-to-signin').hide()
   $('#form-signup').hide()
@@ -24,41 +27,36 @@ const signInSuccess = (data) => {
 }
 
 const signInFailure = () => {
-  $('.signin-fail').text('Problem signing in!')
+  // $('.signin-fail').text('Problem signing in!')
 }
 
 const changePasswordSuccess = (data) => {
-  $('.password-fail').text('You changed your password!')
+  // $('.password-fail').text('You changed your password!')
 }
 
 const changePasswordFailure = () => {
-  $('.password-fail').text('Problem changing password!')
+  // $('.password-fail').text('Problem changing password!')
 }
 
 const signOutSuccess = (data) => {
-  $('.hide-board').hide()
   $('#form-signout').hide()
   $('#no-account').show()
   $('#form-signin').show()
   $('#display-stats').hide()
-  $('#form-reset').hide()
-  $('#p1-win').hide()
-  $('#p2-win').hide()
   $('#is-draw').hide()
   $('#get-games').hide()
   $('#get-one-game').hide()
   $('#start-game').hide()
   $('#change-password').hide()
   $('.game-list').html('')
-  cells.forEach(cellId => {
-    $(cellId).text('')
-    $(cellId).off('click')
-  })
+  gameUi.resetGame()
+  $('.hide-board').hide()
+
   store.user = null
 }
 
 const signOutFailure = () => {
-  $('.signout-fail').text('You cant sign out right now!')
+  // $('.signout-fail').text('You cant sign out right now!')
 }
 
 module.exports = {

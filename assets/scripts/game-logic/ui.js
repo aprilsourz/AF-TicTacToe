@@ -21,13 +21,13 @@ const cellEvent = (cell) => {
 }
 
 const displayP1Winner = () => {
-  $('.game-board').hide()
+  $('.hide-board').hide()
   $('#form-reset').show()
   $('#p1-win').show()
 }
 
 const displayP2Winner = () => {
-  $('.game-board').hide()
+  $('.hide-board').hide()
   $('#form-reset').show()
   $('#p2-win').show()
 }
@@ -37,7 +37,7 @@ const hideResetBtn = () => {
 }
 
 const resetGame = () => {
-  $('.game-board').show()
+  $('.hide-board').show()
   $('#form-reset').hide()
   $('#p2-win').hide()
   $('#p1-win').hide()
@@ -50,7 +50,7 @@ const resetGame = () => {
 }
 
 const isDraw = () => {
-  $('.game-board').hide()
+  $('.hide-board').hide()
   $('#form-reset').show()
   $('#is-draw').show()
 }

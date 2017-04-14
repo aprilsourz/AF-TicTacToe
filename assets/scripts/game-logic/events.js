@@ -26,13 +26,12 @@ const addHandlers = () => {
 // play again button event
 $('#form-reset').on('reset', () => {
   ui.resetGame()
-  addHandlers()
-  logic.resetGameLogic()
   onStartGame(event)
   cells.forEach(cellId => {
     $(cellId).text('')
     $(cellId).off('click')
   })
+  addHandlers()
 })
 
 // api create game event
@@ -40,8 +39,9 @@ const onStartGame = (event) => {
   event.preventDefault()
   addHandlers()
   api.createGame()
-  .then(apiUi.createGameSuccess)
-  .catch(apiUi.createGameFailure)
+    .then(apiUi.createGameSuccess)
+    .catch(apiUi.createGameFailure)
+  logic.resetGameLogic()
   $('#start-game').hide()
   $('.hide-board').show()
   $('#back-to-signin').hide()
