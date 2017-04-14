@@ -21,8 +21,21 @@ const updateGameFailure = () => {
 }
 
 const getGamesSuccess = (data) => {
+  const games = data.games
+  const gameList = $('ul.game-list')
+  games.forEach((g) => {
+    const li = $('<li/>')
+        .addClass('ui-menu-item')
+        .attr('role', 'menuitem')
+        .appendTo(gameList)
+    const link = $('<span/>')
+        .addClass('ui-all')
+        .text('game id ' + g.id)
+        .appendTo(li)
+  })
+
   console.log('here are all the games', data)
-  $('#display-stats').text('You have played ' + data.games.length + ' games of tic tac toe so far!')
+  $('#display-stats').text('You have played ' + data.games.length + ' games of tic tac toe so far! These are the Ids for each game.')
 }
 
 const getGamesFailure = () => {
