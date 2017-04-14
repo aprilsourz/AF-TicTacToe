@@ -48,6 +48,7 @@ const signOutSuccess = (data) => {
   $('#is-draw').hide()
   $('#get-games').hide()
   $('#get-one-game').hide()
+  $('#start-game').hide()
   store.user = null
 }
 
