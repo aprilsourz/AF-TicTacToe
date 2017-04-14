@@ -45,10 +45,10 @@ const addHandlers = () => {
 
 const onSignOut = (event) => {
   event.preventDefault()
-
   api.signOut()
     .then(ui.signOutSuccess)
     .catch(ui.signOutFailure)
+
 }
 
 module.exports = {
