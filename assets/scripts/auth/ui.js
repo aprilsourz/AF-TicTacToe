@@ -4,6 +4,7 @@ const store = require('../store.js')
 const gameUi = require('../game-logic/ui.js')
 
 const displayErrorMessage = (errorText) => {
+  $('#display-error').text('')
   $('#display-error').show()
   $('#display-error').text(errorText || 'Unknown error')
   $('#display-error').delay(3000).fadeOut()
@@ -14,6 +15,7 @@ const signUpSuccess = (data) => {
   $('#form-signup').hide()
   $('#form-signin').show()
   $('#no-account').show()
+  displayErrorMessage('Thank you for signing up!')
 }
 
 const signUpFailure = (error) => {
