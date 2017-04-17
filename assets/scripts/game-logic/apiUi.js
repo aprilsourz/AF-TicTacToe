@@ -27,7 +27,6 @@ const getGamesSuccess = (data) => {
         .addClass('ui-menu-item')
         .attr('role', 'menuitem')
         .appendTo(gameList)
-    const link = $('<span/>')
         .addClass('ui-all')
         .text('game id ' + g.id)
         .appendTo(li)
@@ -36,7 +35,7 @@ const getGamesSuccess = (data) => {
 }
 
 const getGamesFailure = () => {
-  // $('#display-stats').text('Problem getting games!')
+  $('#display-stats').text('Problem getting games!')
 }
 
 const oneGameSuccess = (data) => {
@@ -46,8 +45,12 @@ const oneGameSuccess = (data) => {
     $('#display-stats').text('Game number ' + data.game.id + ' was not completed')
   }
 }
-const oneGameFailure = (data) => {
-  // $('#display-stats').text('Please enter a valid ID!')
+const oneGameFailure = (error) => {
+  if (error.status === 404) {
+    $('#display-stats').text('Please enter a valid ID!')
+  } else {
+    $('#display-stats').text('Unknown error')
+  }
 }
 module.exports = {
   createGameSuccess,

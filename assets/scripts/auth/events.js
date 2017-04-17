@@ -36,6 +36,13 @@ const onNoAccount = (event) => {
   $('#back-to-signin').show()
 }
 
+const onSignOut = (event) => {
+  event.preventDefault()
+  api.signOut()
+    .then(ui.signOutSuccess)
+    .catch(ui.signOutFailure)
+}
+
 const onBackToSignIn = (event) => {
   event.preventDefault()
   $('#form-signup').hide()
@@ -51,13 +58,6 @@ const addHandlers = () => {
   $('#form-signout').on('submit', onSignOut)
   $('#no-account').on('submit', onNoAccount)
   $('#back-to-signin').on('submit', onBackToSignIn)
-}
-
-const onSignOut = (event) => {
-  event.preventDefault()
-  api.signOut()
-    .then(ui.signOutSuccess)
-    .catch(ui.signOutFailure)
 }
 
 module.exports = {
