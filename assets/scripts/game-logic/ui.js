@@ -20,16 +20,18 @@ const cellEvent = (cell) => {
   $(cell).off('click')
 }
 
-const displayP1Winner = () => {
+const displayWinner = (player) => {
   $('.hide-board').hide()
   $('#form-reset').show()
-  $('#p1-win').show()
+  $(`#${player}-win`).show()
+}
+
+const displayP1Winner = () => {
+  displayWinner('p1')
 }
 
 const displayP2Winner = () => {
-  $('.hide-board').hide()
-  $('#form-reset').show()
-  $('#p2-win').show()
+  displayWinner('p2')
 }
 
 const hideResetBtn = () => {
