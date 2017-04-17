@@ -24,7 +24,6 @@
         <label for="inputPassword" class="sr-only">Password</label>
         <input name="credentials[password]" type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
-        <p class="signin-fail"></p>
       </form>
 
       <form id="form-signin" class="form-signin">
@@ -34,7 +33,6 @@
         <label for="inputPassword" class="sr-only">Password</label>
         <input name="credentials[password]" type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign In</button>
-        <p class="signin-fail"></p>
       </form>
 
       <form id="no-account"  class="form-signin">
@@ -50,14 +48,12 @@
         <label for="inputPassword" class="sr-only">Password</label>
         <input name="passwords[new]" type="password" id="inputPassword" class="form-control" placeholder="New Password" required="">
         <button class="btn btn-lg btn-primary btn-block" type="submit">Change Password</button>
-        <p class="password-fail"></p>
       </form>
 
       <form id="form-signout">
         <fieldset>
           <button id="signout-button" class="btn btn-lg btn-primary btn-block" type="submit">Sign Out</button>
         </fieldset>
-        <p class="signout-fail"></p>
       </form>
 
       <form id="start-game">
@@ -76,7 +72,11 @@
   </div>
 
   <div class="row">
-    <div class="col-md-3 col-xs-3"></div>
+
+    <div class="col-md-3 col-xs-3">
+      <p id="display-error"></p>
+    </div>
+
     <div class="col-md-6 col-xs-6 game-board">
         <div class="hide-board">
           <div class="row black-border">

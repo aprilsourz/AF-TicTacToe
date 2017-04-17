@@ -1,9 +1,13 @@
 'use strict'
 
-const logic = require('../game-logic/logic.js')
 const store = require('../store.js')
-const { cells } = require('../game-logic/constants')
 const gameUi = require('../game-logic/ui.js')
+
+const displayErrorMessage = (errorText) => {
+  $('#display-error').show()
+  $('#display-error').text(errorText || 'Unknown error')
+  $('#display-error').delay(3000).fadeOut()
+}
 
 const signUpSuccess = (data) => {
   $('#back-to-signin').hide()
@@ -12,8 +16,12 @@ const signUpSuccess = (data) => {
   $('#no-account').show()
 }
 
-const signUpFailure = () => {
-  $('.signup-fail').text('Oops something went wrong')
+const signUpFailure = (error) => {
+  if (error.status === 400) {
+    displayErrorMessage('There was problem signing up, please try again!')
+  } else {
+    displayErrorMessage()
+  }
 }
 
 const signInSuccess = (data) => {
@@ -26,16 +34,24 @@ const signInSuccess = (data) => {
   store.user = data.user
 }
 
-const signInFailure = () => {
-  // $('.signin-fail').text('Problem signing in!')
+const signInFailure = (error) => {
+  if (error.status === 401) {
+    displayErrorMessage('Invalid username or password.')
+  } else {
+    displayErrorMessage()
+  }
 }
 
 const changePasswordSuccess = (data) => {
-  // $('.password-fail').text('You changed your password!')
+  displayErrorMessage('You changed your password!')
 }
 
-const changePasswordFailure = () => {
-  // $('.password-fail').text('Problem changing password!')
+const changePasswordFailure = (error) => {
+  if (error.status === 400) {
+    displayErrorMessage('Invalid password.')
+  } else {
+    displayErrorMessage()
+  }
 }
 
 const signOutSuccess = (data) => {
