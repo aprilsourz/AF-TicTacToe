@@ -38,7 +38,7 @@ const signInSuccess = (data) => {
 
 const signInFailure = (error) => {
   if (error.status === 401) {
-    displayErrorMessage('The old password you entered was invalid.')
+    displayErrorMessage('Invalid username or password.')
   } else {
     displayErrorMessage()
   }
@@ -50,7 +50,7 @@ const changePasswordSuccess = (data) => {
 
 const changePasswordFailure = (error) => {
   if (error.status === 400) {
-    displayErrorMessage('Invalid password.')
+    displayErrorMessage('The old password you entered was invalid.')
   } else {
     displayErrorMessage()
   }
