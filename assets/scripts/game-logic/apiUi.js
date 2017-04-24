@@ -47,9 +47,9 @@ const oneGameSuccess = (data) => {
 }
 const oneGameFailure = (error) => {
   if (error.status === 404) {
-    $('#display-stats').text('Please enter a valid ID!')
+    $('#display-stats').text('Please enter a valid ID number!')
   } else {
-    $('#display-stats').text('Unknown error')
+    $('#display-stats').text('Please enter an ID number into the form!')
   }
 }
 module.exports = {
