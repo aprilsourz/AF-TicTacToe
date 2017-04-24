@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Tic Tac Toe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags unless you know what you are doing -->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags unless you know what you are doing -->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+
+      <form id="form-signup" class="form-signin start-hidden">
+        <h2 class="form-signin-heading">Please sign up</h2>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input name="credentials[email]" type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input name="credentials[password]" type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+        <input name="credentials[password_confirmation]" type="password" class="form-control"  placeholder="Password Confirmation" required="">
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+      </form>
+
+      <form id="form-signin" class="form-signin">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input name="credentials[email]" type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input name="credentials[password]" type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign In</button>
+      </form>
+
+      <form id="no-account"  class="form-signin">
+        <fieldset>
+          <button id="no-account-button" class="btn btn-lg btn-primary btn-block" type="submit">No account? Sign up here!</button>
+        </fieldset>
+      </form>
+
+      <form id="change-password" class="form-signin start-hidden">
+        <h2 class="form-signin-heading">Change Password</h2>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input name="passwords[old]" type="password" id="inputPassword" class="form-control" placeholder="Old password" required="">
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input name="passwords[new]" type="password" id="inputPassword" class="form-control" placeholder="New Password" required="">
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Change Password</button>
+      </form>
+
+      <form id="form-signout">
+        <fieldset>
+          <button id="signout-button" class="btn btn-lg btn-primary btn-block" type="submit">Sign Out</button>
+        </fieldset>
+      </form>
+
+      <form id="start-game" class="start-hidden ">
+        <fieldset>
+          <button id="start-game-button" class="btn btn-lg btn-primary btn-block" type="submit">Start Game!</button>
+        </fieldset>
+      </form>
+
+      <form class="form-signin start-hidden" id="back-to-signin">
+        <fieldset>
+          <button id="back-to-signin-button" class="btn btn-lg btn-primary btn-block" type="submit">Already have an account?</button>
+        </fieldset>
+      </form>
+
+    </div>
+  </div>
+
+  <div class="row">
+
+    <div class="col-md-3 col-xs-3">
+      <p id="display-error"></p>
+    </div>
+
+    <div class="col-md-6 col-xs-6 game-board">
+        <div class="hide-board">
+          <div class="row black-border">
+            <div id="cell-0" class="col-md-4 col-xs-4 black-border board-cell"></div>
+            <div id="cell-1" class="col-md-4 col-xs-4 black-border board-cell"></div>
+            <div id="cell-2" class="col-md-4 col-xs-4 black-border board-cell"></div>
+          </div>
+
+          <div class="row black-border">
+            <div id="cell-3" class="col-md-4 col-xs-4 black-border board-cell"></div>
+            <div id="cell-4" class="col-md-4 col-xs-4 black-border board-cell"></div>
+            <div id="cell-5" class="col-md-4 col-xs-4 black-border board-cell"></div>
+          </div>
+
+          <div class="row black-border">
+            <div id="cell-6" class="col-md-4 col-xs-4 black-border board-cell"></div>
+            <div id="cell-7" class="col-md-4 col-xs-4 black-border board-cell"></div>
+            <div id="cell-8" class="col-md-4 col-xs-4 black-border board-cell"></div>
+          </div>
+        </div>
+    </div>
+    <!-- /game-board -->
+
+
+    <div class="col-md-3 col-xs-3 padding">
+      <form id="form-reset" class="start-hidden ">
+        <input class="btn btn-primary" type="reset" value="Play again?">
+      </form>
+
+      <h1 class="start-hidden"  id="p1-win">Player 1 Wins!</h1>
+      <h1 class="start-hidden"  id="p2-win">Player 2 Wins!</h1>
+      <h1 class="start-hidden"  id="is-draw">Its a Draw!</h1>
+    </div>
+
+  </div>
+  <!-- /big row -->
+  <div class="row get-games-margin">
+    <div class="col-md-12 col-xs-12">
+      <form id="get-games" class="start-hidden ">
+        <fieldset>
+          <button id="get-games-button" class="btn btn-lg btn-primary btn-block" type="submit">View your games</button>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12 col-xs-12">
+      <form id="get-one-game" class="clear-input get-one-game start-hidden ">
+        <input type="submit" name="submit" value="Get One Game">
+        <input type="text" name="game[id]" placeholder="game id">
+      </form>
+    </div>
+
+    <div class="col-md-3 col-xs-3 padding">
+      <div class="start-hidden" id="display-stats"></div>
+      <ul class="game-list"></ul>
+    </div>
+
+  </div>
+
+
+</body>
+
+</html>
