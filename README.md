@@ -89,9 +89,7 @@ The UI was done with JQuery's hide and show methods.
 
 
 ## For Future Iterations
-- Add visual notifications for invalid sign in or sign up
 - Style the App
-- Use routing instead of .hide() and .show()
 - Add feature to support player 0 joining the game from a second device.
 - Add win counter feature
 - Show which player won the game when user requests game by ID.
