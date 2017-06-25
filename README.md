@@ -45,7 +45,11 @@ index. False for player O.
 
 
 Determining the winner of the game was the most difficult part of the project.
-I did more whiteboarding, [Link,](http://i.imgur.com/2vlWCAH.jpg) [Link.](http://i.imgur.com/GHPXqrR.jpg)
+More whiteoarding helped to come up with a solution.
+
+[Diagram](http://i.imgur.com/2vlWCAH.jpg)
+[Diagram](http://i.imgur.com/GHPXqrR.jpg)
+
 I found that their are only 8 winning combinations for each player. I used an
 array with 8 sub array's. Each sub array contains the indexes of a winning
 combo.
