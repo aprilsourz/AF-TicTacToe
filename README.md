@@ -1,14 +1,6 @@
 
 
-# Arlo Feirman - Tic Tac Toe
-
-[Link to game!](https://arlofeirman.github.io/AF-TicTacToe/)
-
-First project for the Web Development Immersive at General Assembly. A 1 player tic tac toe game.
-I built the app over a 5-day sprint. The server may take 15 to 30 seconds to respond when you first create an account.
-The back end is hosted on Heroku, which puts the API to sleep after 30 minutes of inactivity.
-Fore more information [click here.](https://devcenter.heroku.com/articles/free-dyno-hours)
-
+# April Feirman - Tic Tac Toe
 
 ## Wire Frames
 -  [Wire Frame 1](http://i.imgur.com/UF5U5yt.jpg)
