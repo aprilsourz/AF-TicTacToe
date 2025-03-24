@@ -1,6 +1,6 @@
-
-
 # April Feirman - Tic Tac Toe
+
+First project for the Web Development Immersive at General Assembly. I built the app over a 5-day sprint.
 
 ## Wire Frames
 -  [Wire Frame 1](http://i.imgur.com/UF5U5yt.jpg)
